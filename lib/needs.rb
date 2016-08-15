@@ -15,12 +15,3 @@ def need (gems)
     end
   end
 end
-
-
-# # for test
-# need ['rainbow', 'chronic']
-# require 'rainbow'
-# require 'chronic'
-
-# puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow)
-# puts Chronic.parse('tomorrow')
