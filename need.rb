@@ -1,9 +1,10 @@
 require 'bundler/inline'
-def NEED (gems)
+def need (gems)
   current_gems = `gem list --no-version --no-verbos`
   gems_array = current_gems.split("\n")
 
   need_to_install_gems = gems - (gems_array & gems)
+  puts need_to_install_gems.to_s
 
   unless need_to_install_gems.empty?
     gemfile true do
@@ -16,11 +17,10 @@ def NEED (gems)
 end
 
 
-# for test
-#NEED(['rainbow', 'chronic'])
-#require 'rainbow'
-#require 'chronic'
+# # for test
+# need ['rainbow', 'chronic']
+# require 'rainbow'
+# require 'chronic'
 
-#puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow)
-
-#puts Chronic.parse('tomorrow')
+# puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow)
+# puts Chronic.parse('tomorrow')
